@@ -1,7 +1,7 @@
 ### swiftGreeks
 A personal educational project developing a low-latency FPGA Ethernet feed handler and an FPGA hardware accelerator, benchmarking against an embedded C++ baseline for the calculation of Black-Scholes options greeks from raw market data.
 
-> **Note:** This project uses the Zybo Z7’s 100 Mbps Ethernet for demonstration and testing. In production HFT systems, feed handlers run at 10–100 Gbps, but the underlying packet parsing, multicast handling, and FPGA pipeline design principles remain largely the same and this platform suffices for educational purposes.
+> **Note:** This project uses the Zybo Z7’s 1Gbps Ethernet for demonstration and testing. In production HFT systems, feed handlers run at 10–100Gbps, but the underlying packet parsing, multicast handling, and FPGA pipeline design principles remain largely the same and this platform suffices for educational purposes.
 
 **Tools Used**
 
