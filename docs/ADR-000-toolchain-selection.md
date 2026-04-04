@@ -13,4 +13,9 @@ cocotb is now used widely in many FPGA development spaces in industry, and is al
 
 I may still switch to Verilator for simulation, but in the interests of minimizing software switching overhead, I will use Questa's built-in simulator for now. With regards to synthesis and implementation, Vivado is what I'm used to using, and obviously works best with the Xilinx SoC I'm using.
 
-Andy Chiem; 4/2/2026
+*Andy Chiem; 4/2/2026*
+
+---
+\
+*Update -- 4/3/2026*\
+Switched from Questa to Verilator for simulation, and development moved to a WSL remote distro where cocotb integrates more cleanly with Verilator. GTKWave will be the new waveform viewer as it works natively in WSL and is much more lightweight given that the only role of Questa would have been viewing .vcd files. GTKWave more than suffices for the time being. Also advances the goal of using as many fully open-source tools as possible.

@@ -8,8 +8,9 @@ A personal educational project developing a low-latency FPGA Ethernet feed handl
 *This project is being developed for the Zybo Z7 SoC and its onboard FPGA, comparable to the Xilinx Artix-7 series FPGA.*
 
 `Xilinx Vivado`
-`Questa/ModelSim`
+`Verilator`
 `cocotb`
+`GTKWave`
 `SystemVerilog`
 `C++`
 `Python`
