@@ -52,7 +52,6 @@ logic [2:0] udp_count; // 8 bytes
 typedef struct packed {
     logic [15:0] ethertype;
     int unsigned ipbytes;
-    int unsigned udpbytes;
 } protocol_t;
 
 parser_state state;
