@@ -19,7 +19,7 @@ A personal educational project developing a low-latency FPGA Ethernet feed handl
 #### **File Structure**
 
 `/src` -> Main C++ code for websockets, serialization, and embedded software on the ARM\
-`/hdl` –> Main SystemVerilog code for FPGA-side modules\
+`/rtl` –> Main SystemVerilog code for FPGA-side modules\
 `/tb` –> cocotb testbenches for verifying that each module works as intended\
 `/docs` -> Additional documentation, including high-level block diagrams and ADRs
 
