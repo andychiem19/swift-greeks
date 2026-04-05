@@ -1,1 +1,4 @@
 /tb/test-parser/sim_build
+/tb/test-parser/__pycache__
+/tb/test-parser/results.xml
+/tb/test-parser/dump.vcd

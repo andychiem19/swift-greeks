@@ -51,7 +51,7 @@ logic [2:0] udp_count; // 8 bytes
 
 typedef struct packed {
     logic [15:0] ethertype;
-    int unsigned ipbytes;
+    logic [5:0] ipbytes;
 } protocol_t;
 
 parser_state state;
@@ -166,6 +166,8 @@ always_ff @(posedge clk or negedge nrst) begin
                 // resets FSM and registers when an error state is reached
                 state <= IDLE;
             end
+
+            default: state <= ERROR;
         endcase
     end
 end
