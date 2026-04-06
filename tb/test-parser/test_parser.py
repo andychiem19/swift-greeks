@@ -14,6 +14,15 @@ async def send_frame(dut, frame_bytes):
     dut.tvalid.value = 0
     dut.tlast.value = 0
 
+async def monitor_output(dut):
+    for _ in range(200):
+        await RisingEdge(dut.clk)
+        if dut.packet_valid.value:
+            print(f"packet byte: {dut.packet.value}")
+        if dut.packet_end.value:
+            print(f"packet end received")
+            break   
+
 @cocotb.test()
 async def test_parser(dut):
     # Start clock
@@ -37,14 +46,8 @@ async def test_parser(dut):
     preamble = b'\x55' * 7 + b'\xD5'        # scapy doesn't include the preamble and SFD in its Ethernet frames
     frame_bytes = preamble + bytes(frame)
 
+    cocotb.start_soon(monitor_output(dut)) # start a concurrent monitor
+
     # Send the Ethernet frame
     await send_frame(dut, frame_bytes)
-
-    # Wait and check output
-    for _ in range(100):
-        await RisingEdge(dut.clk)
-        if dut.packet_valid.value:
-            print(f"packet byte: {dut.packet.value}")
-        if dut.packet_end.value:
-            print("packet end received")
-            break
+    await Timer(100, units="ns")

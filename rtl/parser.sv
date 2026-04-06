@@ -75,6 +75,8 @@ always_ff @(posedge clk or negedge nrst) begin
     else begin
         case(state)
             IDLE: begin
+                packet_valid <= 0;
+                packet_end <= 0;
                 if (tvalid) begin
                     if (preamble_count < 7) begin 
                         if (tdata == 8'h55) begin // checks for 7 consecutive preamble bits
@@ -150,7 +152,7 @@ always_ff @(posedge clk or negedge nrst) begin
                     packet <= tdata;
                     if (tlast) begin
                         packet_end <= 1;
-                        packet_valid <= 0;
+                        packet_valid <= 1;
                         state <= IDLE;
                     end else begin
                         packet_valid <= 1;
