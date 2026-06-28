@@ -1,8 +1,9 @@
 SIM = verilator
 TOPLEVEL_LANG = verilog
-VERILOG_SOURCES = $(PWD)/../../rtl/bs_accelerator.sv
-TOPLEVEL = bs_accelerator
-MODULE = test_bs_accelerator
+VERILOG_SOURCES = $(PWD)/../../src/cordic.sv
+TOPLEVEL = cordic
+MODULE = test_cordic
 EXTRA_ARGS += --sv --trace
+COMPILE_ARGS += -GMODE=1 -GROTATE=0
 
 include $(shell cocotb-config --makefiles)/Makefile.sim

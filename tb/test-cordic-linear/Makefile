@@ -1,8 +1,9 @@
 SIM = verilator
 TOPLEVEL_LANG = verilog
-VERILOG_SOURCES = $(PWD)/../../src/parser.sv
-TOPLEVEL = parser
-MODULE = test_parser
+VERILOG_SOURCES = $(PWD)/../../src/cordic.sv
+TOPLEVEL = cordic
+MODULE = test_cordic
 EXTRA_ARGS += --sv --trace
+COMPILE_ARGS += -GMODE=2 -GROTATE=1
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
