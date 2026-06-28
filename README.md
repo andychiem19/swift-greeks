@@ -1,3 +1,6 @@
+> [!NOTE]
+> This project is a work-in-progress!
+
 ### swiftGreeks
 A personal educational project developing a low-latency FPGA Ethernet feed handler and an FPGA hardware accelerator, benchmarking against an embedded C++ baseline for the calculation of Black-Scholes options greeks from raw market data.
 
