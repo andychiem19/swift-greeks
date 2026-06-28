@@ -1,4 +1,4 @@
-## ADR-000: Toolchain Selection
+## ADR-00: Toolchain Selection
 
 **Context**\
 The first task I had to address when I thought of this project was choosing a simulation and verification toolchain capable enough for the size of the task, aligned with my personal goals, and open-source enough that I wouldn't have to pay for any tools. 
