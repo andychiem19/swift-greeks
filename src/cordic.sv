@@ -181,8 +181,6 @@ module cordic #(
             end
         end else begin : gen_stages_hyperbolic
             // hyperbolic repeats iterations 4 and 13 (0-indexed: 3 and 12) for convergence
-            // stage:     0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
-            // iteration: 0  1  2  3  3  4  5  6  7  8  9 10 11 12 12 13 14 15
             for (i = 0; i < 18; i++) begin : gen_stage // one registered pipeline stage per cordic iteration
 
                 // sigma=1 → positive direction; sigma=0 → negative direction
